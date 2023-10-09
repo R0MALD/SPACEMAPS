@@ -12,3 +12,6 @@ Our NASA Hackathon project presents an interactive web application that maps glo
 The project utilizes NASA's launch data and EPA estimates for CO2 emissions, providing an informative and engaging platform to explore rocket launches and contribute to discussions on sustainable space exploration.
 
 The project is a fork of [ViMeASpaTeA](https://github.com/maulikkamdar/ViMeASpaTeA) which is a fork of the [WebGL Globe project](https://github.com/dataarts/webgl-globe), which provides the foundational framework for our interactive map.
+
+![image](https://github.com/R0MALD/SPACEMAPS/assets/137123487/0bed1aaa-84ff-433e-a238-b6cbbf8d0e1a)
+
