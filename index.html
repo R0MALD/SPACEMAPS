@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>SPACE-MAPS</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000000 url(loading.gif) center center no-repeat;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+        height: 100%;
+      }
+
+      #info {
+
+        font-size: 11px;
+        position: absolute;
+        bottom: 5px;
+        background-color: rgba(0,0,0,0.8);
+        border-radius: 3px;
+        right: 10px;
+        padding: 10px;
+
+      }
+
+      #currentInfo {
+        width: 95%;
+        position: absolute;
+        left: 20px;
+        top: 63px;
+        background-color: rgba(0,0,0,0.2);
+        border-top: 0px solid rgba(255,255,255,0.4);
+        padding: 10px;
+      }
+
+      a {
+        color: #aaa;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .bull {
+        padding: 0 5px;
+        color: #555;
+      }
+
+      #title {
+        position: absolute;
+        top: 20px;
+        width: 1000px;
+        left: 20px;
+        display: block;
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 3px;
+        font: 30px Georgia;
+        padding: 10px;
+      }
+
+	 #title span{
+	 	font: 20px Georgia;
+	 }
+	 
+	 #meteorInfo {
+        padding-top: 0;
+        width: 10%;
+        position: absolute;
+        left: 20px;
+        top: 200px;
+        background-color: rgba(0,0,0,0.2);
+        border-top: 0px solid rgba(255,255,255,0.4);
+        padding: 10px;
+      }
+      #textureInfo {
+        width: 10%;
+        position: absolute;
+        left: 85%;
+        top: 120px;
+        background-color: rgba(0,0,0,0.2);
+        border-top: 0px solid rgba(255,255,255,0.4);
+        padding: 10px;
+      }
+      
+      #fellFoundInfo {
+        width: 0px;
+        position: absolute;
+        left: 5%;
+        top: 850px;
+        font: 0px sans-serif;
+        background-color: rgba(0,0,0,0);
+        border-top: 0px solid rgba(255,255,255,0);
+        padding: 0px; 
+      }
+	 
+	 #specificInfo {
+	 	width: 10%;
+        position: absolute;
+        left: 0%;
+        top: 220px;
+        background-color: rgba(0,0,0,0.2);
+        border-top: 0px solid rgba(255,255,255,0.4);
+        padding: 10px;
+	 }
+   .meteorCat {
+      display: block;
+      font: 0px sans-serif;
+      left: 85%;
+      top: 200px;
+      line-height: 0px;
+      height: 0px;
+      color: rgba(0,0,0,0);
+      padding-left: 0px;
+      margin-bottom: 0px;
+      cursor: pointer;
+      border: 0px solid white;
+      opacity: 0.0;
+    }
+
+    .forf {
+      display: block;
+      font: 0px sans-serif;
+      line-height: 26px;
+      height: 25px;
+      color: rgba(0,0,0,1);
+      padding-left: 7px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border: 0px solid white;
+      opacity: 0.4;
+    }
+
+    .meteorCat:hover, .meteorCat.active {
+      font-size: 0px;
+      color: #000;
+      opacity: 0;
+    }
+	 .prominent {
+	 	border: 0px solid white;
+	 }
+      .year {
+        padding-top: 20px;
+        font: 20px Georgia;
+        line-height: 26px;
+        height: 4px;
+        text-align: Center;
+        float: left;
+        width: 80px;
+        color: rgba(255, 255, 255, 0.4);
+
+        cursor: pointer;
+        -webkit-transition: all 0.1s ease-out;
+      }
+
+      .year:hover, .year.active {
+        font-size: 23px;
+        color: #fff;
+      }
+	#aboutContainer {
+		display : none;
+		width: 50%;
+		height: 600px;
+		position: absolute;
+		top: 120px;
+		left:25%;
+		z-index:10;
+		color: #fff;
+		background-color: rgba(0,0,0,0.9);
+		font-size: 16px;
+        border-top: 1px solid rgba(255,255,255,0.4);
+	}
+    </style>
+    <script type="text/javascript" src="third-party/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="third-party/json2.js"></script>
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="parser.js"></script>
+    <script type="text/javascript"><!--Google Analytics Code Goes Here--></script>
+  </head>
+  <body>
+
+  <div id="container"></div>
+  <div id="iffcontainer"></div>
+  
+  <div id="info">
+    <strong> Visualization derived from <a href="http://www.chromeexperiments.com/globe" target='_blank'>WebGL Globe</a> </strong>
+  </div>
+
+  <div id="currentInfo">
+    <span id="year1500" class="year">USA</span>
+    <span id="year1800" class="year">South Korea</span>
+    <span id="year1810" class="year">Russia</span>
+    <span id="year1820" class="year">China</span>
+    <span id="year1830" class="year">Australia</span>
+    <span id="year1840" class="year">New Zealand</span>
+    <span id="year1850" class="year">India</span>
+    <span id="year1860" class="year">France</span>
+    <span id="year1870" class="year"></span>
+    <span id="year1880" class="year"></span>
+    <span id="year1890" class="year"></span>
+    <span id="year1900" class="year"></span>
+    <span id="year1910" class="year"></span>
+    <span id="year1920" class="year"></span>
+    <span id="year1930" class="year"></span>
+    <span id="year1940" class="year"></span>
+    <span id="year1950" class="year"></span>
+    <span id="year1960" class="year"></span>
+    <span id="year1970" class="year"></span>
+    <span id="year1980" class="year"></span>
+    <span id="year1990" class="year"></span>
+    <span id="year2000" class="year"></span>
+    <span id="year2010" class="year"></span>
+  </div>
+
+  <div id="title">
+    <b>NASA SPACE MAPS</b> <span>(Visualizing Launch Sites Across the World)</span>
+  </div>
+
+  <div id="meteorInfo">
+    <div id="sAll" class="meteorCat" style="background-color:#fff"></div>
+  </div>
+  
+  <!-- <div id="textureInfo">
+  	<div id="natural" class="meteorCat" style="background-color:#fff">Natural</div>
+  	<div id="political" class="meteorCat" style="background-color:#fff">Political</div>
+  </div>
+   -->
+  <div id="fellFoundInfo">
+  </div>
+  
+  <div id="specificInfo" align='center'>
+  	<h2>Amount of missions:</h2>
+  	<h1 id='numberMeteor'></h1>
+  	<h2></h2>
+  	
+  </div>
+  
+  <script type="text/javascript" src="third-party/Three/ThreeWebGL.js"></script>
+  <script type="text/javascript" src="third-party/Three/ThreeExtras.js"></script>
+  <script type="text/javascript" src="third-party/Three/RequestAnimationFrame.js"></script>
+  <script type="text/javascript" src="third-party/Three/Detector.js"></script>
+  <script type="text/javascript" src="third-party/Tween.js"></script>
+  <script type="text/javascript" src="globe.js"></script>
+  <script type="text/javascript" src="render.js"></script>
+
+  </body>
+
+</html>
