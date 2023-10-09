@@ -13,5 +13,6 @@ The project utilizes NASA's launch data and EPA estimates for CO2 emissions, pro
 
 The project is a fork of [ViMeASpaTeA](https://github.com/maulikkamdar/ViMeASpaTeA) which is a fork of the [WebGL Globe project](https://github.com/dataarts/webgl-globe), which provides the foundational framework for our interactive map.
 
-![image](https://github.com/R0MALD/SPACEMAPS/assets/137123487/0bed1aaa-84ff-433e-a238-b6cbbf8d0e1a)
+![image](https://github.com/R0MALD/SPACEMAPS/assets/137123487/a13ab7f7-7414-4d67-acae-d5c6aac0d96e)
+
 
