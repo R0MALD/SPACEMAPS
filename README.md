@@ -10,3 +10,5 @@ Our NASA Hackathon project presents an interactive web application that maps glo
 - **Environmental Insights:** Learn about the environmental consequences of each launch, with CO2 emission data prominently displayed.
 
 The project utilizes NASA's launch data and EPA estimates for CO2 emissions, providing an informative and engaging platform to explore rocket launches and contribute to discussions on sustainable space exploration.
+
+The project is based on a fork of the [WebGL Globe project](https://github.com/dataarts/webgl-globe), which provides the foundational framework for our interactive map.
